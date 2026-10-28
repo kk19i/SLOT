@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#fff5f6">
+<title>創作お題スロット</title>
+<style>
+:root{--bg:#fff7f7;--paper:#fffdfd;--ink:#684c55;--muted:#a1848b;--pink:#d98fa2;--pink-dark:#bd7189;--pale:#fde9ee;--line:#f1d8df;--shadow:0 8px 24px #b66f8412}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:radial-gradient(ellipse at top,#fff 0,#fff7f7 56%,#fff0f3 100%);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif}
+header{position:relative;text-align:center;padding:29px 16px 22px;overflow:hidden}header:before,header:after{content:"✧ ･ﾟ: * ✧ ･ﾟ: *";position:absolute;color:#efc3ce;opacity:.7;font-size:17px;top:25px}header:before{left:-15px;transform:rotate(-18deg)}header:after{right:-15px;transform:rotate(18deg)}.bow{font-size:29px;color:var(--pink);line-height:1}.kicker{font-size:10px;letter-spacing:.2em;color:var(--pink-dark);font-weight:700;margin-top:8px}h1{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:clamp(28px,8vw,39px);font-weight:600;letter-spacing:.08em;margin:7px 0 8px}.subtitle{font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:13px;color:var(--muted);margin:0}main{max-width:620px;margin:auto;padding:0 14px 38px}.intro{text-align:center;color:var(--muted);font-size:12px;line-height:1.8;margin:0 0 18px}.panel{background:#ffffffd9;border:1px solid #f4e0e5;border-radius:23px;padding:17px 14px;box-shadow:var(--shadow);margin-bottom:14px}.section-label{font-size:12px;font-weight:700;letter-spacing:.06em;margin:0 0 12px;color:#9b6b7a}.section-label span{margin-right:6px}.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.slot{min-width:0;background:linear-gradient(155deg,#fff 0%,#fff3f6 100%);border:1px solid #eac4cf;border-radius:17px;padding:11px 5px 10px;text-align:center;box-shadow:inset 0 0 0 3px #fff8fa,0 4px 9px #b66f8412}.slot-label{font-size:10px;letter-spacing:.04em;color:#b78090;font-weight:700}.reel{display:flex;align-items:center;justify-content:center;min-height:74px;padding:8px 1px;font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:clamp(15px,4vw,20px);font-weight:600;line-height:1.4;overflow-wrap:anywhere}.reel.spinning{animation:pulse .12s linear infinite alternate}@keyframes pulse{from{transform:translateY(-2px);opacity:.55}to{transform:translateY(2px);opacity:1}}.count{font-size:9px;color:#c0a2aa}.setting{margin-top:17px}.setting-label{display:block;font-size:12px;font-weight:700;color:#9b6b7a;margin-bottom:7px}.pill-reel{width:100%;min-height:52px;display:flex;align-items:center;justify-content:center;position:relative;font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:15px;font-weight:600;text-align:center;overflow-wrap:anywhere;padding:12px 40px 12px 16px;background:linear-gradient(90deg,#fff5f7,#fffafa);border:1px solid var(--line);border-radius:999px;box-shadow:inset 0 1px 2px #b66f8408}.pill-reel:after{content:"⌄";position:absolute;right:15px;top:10px;color:var(--pink-dark);font-family: sans-serif;font-size:19px;font-weight:400}.pill-reel.spinning{animation:pulse .12s linear infinite alternate}.settings-slots{display:grid;gap:0}.primary{width:100%;margin-top:19px;background:linear-gradient(180deg,#e6a6b6,#d5879d);color:white;border:0;border-radius:999px;padding:15px 18px;font:inherit;font-weight:700;letter-spacing:.04em;box-shadow:0 4px 0 #bd7189,0 7px 14px #d5879d30;cursor:pointer}.primary:active{transform:translateY(2px);box-shadow:0 2px 0 #bd7189}.primary:disabled{opacity:.65;cursor:wait}.result{background:linear-gradient(145deg,#fff,#fff2f5);border:1px solid var(--line);border-radius:20px;padding:16px;margin-top:14px}.result-title{text-align:center;font-size:10px;letter-spacing:.18em;color:#b78090;font-weight:700}.result-title:before{content:"♡  ";font-size:13px}.result-title:after{content:"  ♡";font-size:13px}#resultText{text-align:center;font-family:"Hiragino Mincho ProN","Yu Mincho",serif;font-size:17px;line-height:1.9;font-weight:600;margin:10px 0 13px;overflow-wrap:anywhere}.result-actions{display:flex;gap:8px;flex-wrap:wrap}.secondary{font:inherit;cursor:pointer;border:1px solid var(--line);border-radius:999px;background:#fffafb;color:#926b77;padding:10px 13px;font-size:12px;font-weight:600}.result-actions button{flex:1}.bottom-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:13px}.details{margin-top:18px;background:#fffdfd;border:1px solid var(--line);border-radius:17px;padding:14px}.details summary{cursor:pointer;font-size:13px;font-weight:700}.small{font-size:12px;line-height:1.8;color:var(--muted)}.field{display:flex;flex-direction:column;gap:6px;margin:12px 0}label{font-size:12px;font-weight:700}input,textarea{font:inherit;width:100%;border:1px solid var(--line);border-radius:12px;padding:11px;background:white;color:var(--ink)}textarea{min-height:110px;resize:vertical}.category-list{display:grid;gap:10px;margin-top:14px}.cat-card{border:1px solid var(--line);border-radius:13px;padding:12px}.cat-head{display:flex;gap:8px;align-items:center;margin-bottom:7px}.cat-head strong{flex:1;font-size:13px}.cat-items{font-size:12px;line-height:1.8;color:var(--muted);overflow-wrap:anywhere}.editor-buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.editor-buttons button{flex:1}.footer{text-align:center;color:#bd9da5;font-size:11px;margin-top:22px}.flower{color:#e8b8c5}@media(max-width:380px){.panel{padding:14px 10px}.slots{gap:5px}.slot{padding:9px 3px}.reel{min-height:67px}.slot-label{font-size:9px}}
+</style></head>
+<body>
+<header><div class="bow">୨୧</div><div class="kicker">CREATIVE PROMPT SLOT</div><h1>創作お題スロット</h1><p class="subtitle">今日のインスピレーションを、ここに。</p></header>
+<main><p class="intro">好きな組み合わせを見つけて、<br>あなただけの物語のきっかけにしよう <span class="flower">✧</span></p>
+<section class="panel"><p class="section-label"><span>♡</span>スロットを回す</p><div class="slots" id="slots" aria-label="単語スロット"></div><div class="settings-slots" id="settingsSlots"></div>
+<button class="primary" id="spinBtn">✧　お題を引く　✧</button></section>
+<section class="result" aria-live="polite"><div class="result-title">TODAY'S PROMPT</div><div id="resultText">お題を引いて、創作のきっかけを見つけよう。</div><div class="result-actions"><button class="secondary" id="rerollBtn">↻ もう一度引く</button><button class="secondary" id="copyBtn">▢ 結果をコピー</button></div></section>
+<div class="bottom-actions"><button class="secondary" id="resetBtn">最初に戻す</button></div>
+<details class="details"><summary>୨୧　お題の管理・編集（この端末のみ）</summary><div class="editor"><p class="small">各項目のお題を1行ずつ入力して保存できます。編集内容はこの端末のブラウザ内に保存されます。公開サイトの全員に反映するには「公開用JSONを書き出す」で保存したファイルを、サイトの <b>topics.json</b> と置き換えて再公開してください。ここはログイン機能ではないため、秘密の情報は入力しないでください。</p><div class="field"><label for="editCategory">編集する項目</label><select id="editCategory"></select></div><div class="field"><label for="editItems">お題（1行に1つ）</label><textarea id="editItems" placeholder="雨\n約束\n指先"></textarea></div><div class="editor-buttons"><button class="primary" id="saveItemsBtn" style="margin:0">変更を保存</button><button class="secondary" id="exportBtn">公開用JSONを書き出す</button><button class="secondary" id="importBtn">JSONを読み込む</button><input type="file" id="importFile" accept="application/json,.json" hidden><button class="secondary" id="restoreBtn">初期設定に戻す</button></div><div class="category-list" id="categoryList"></div></div></details>
+<p class="footer">つくる楽しさを、ひとつずつ。 <span class="flower">♡ ✧ ♡</span></p></main>
+<script>
+const DEFAULT_TOPICS={
+ word1:["雨","秘密","花束","体温","指先","約束","月","嘘"],
+ word2:["夜明け","手紙","微熱","記憶","窓辺","名前","夢","沈黙"],
+ word3:["再会","キス","残り香","星空","本音","永遠","さよなら","幸福"],
+ relationships:["両片思い","幼なじみ","犬猿の仲","主従関係","相棒","秘密の恋","片思い","元恋人","共犯者","すれ違い","ライバル","運命の相手"],
+ counterpart:["先輩","後輩","幼なじみ","同級生","年上","年下","ライバル","相棒","初対面の人","元恋人","片思いの相手","運命の人"],
+ counts:["500字","1,000字","1,500字","3,000字","5,000字"]
+};
+const LABELS={word1:"単語①",word2:"単語②",word3:"単語③",relationships:"関係性",counterpart:"相手",counts:"文字数指定"};
+const SLOT_KEYS=["word1","word2","word3","relationships","counterpart","counts"];
+const STORAGE_KEY="creative-slot-pink-v3";
+let topics=clone(DEFAULT_TOPICS),busy=false;
+function clone(v){return JSON.parse(JSON.stringify(v))}
+function clean(v){const out={};for(const k of Object.keys(DEFAULT_TOPICS)){const source=Array.isArray(v?.[k])?v[k]:DEFAULT_TOPICS[k];out[k]=source.map(x=>String(x).trim()).filter(Boolean);if(!out[k].length)throw Error("各項目に1つ以上のお題が必要です")}return out}
+async function load(){
+  // 端末内に保存した編集内容を優先し、再読み込みで公開JSONに上書きされないようにする
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      topics = clean(JSON.parse(saved));
+      return;
+    }
+  } catch (e) {
+    console.warn("端末内のお題を読み込めませんでした。", e);
+  }
+  // 端末内に保存内容がない場合だけ、公開用 topics.json を読み込む
+  try {
+    const r = await fetch("./topics.json?update=" + Date.now(), {cache:"no-store"});
+    if (r.ok) {
+      topics = clean(await r.json());
+      return;
+    }
+  } catch (e) {
+    console.warn("公開用JSONを読み込めませんでした。", e);
+  }
+  topics = clone(DEFAULT_TOPICS);
+  try { save(); } catch (e) {}
+}
+function save(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(topics));
+}
+function pick(a){return a[Math.floor(Math.random()*a.length)]}
+function render(){const root=document.getElementById("slots");root.innerHTML="";["word1","word2","word3"].forEach(key=>{const card=document.createElement("article");card.className="slot";const label=document.createElement("div");label.className="slot-label";label.textContent=LABELS[key];const reel=document.createElement("div");reel.className="reel";reel.id="reel-"+key;reel.textContent=pick(topics[key]);const count=document.createElement("div");count.className="count";count.textContent=topics[key].length+"個のお題";card.append(label,reel,count);root.append(card)});const settings=document.getElementById("settingsSlots");settings.innerHTML="";["relationships","counterpart","counts"].forEach(key=>{const row=document.createElement("div");row.className="setting";const label=document.createElement("div");label.className="setting-label";label.textContent=(key==="relationships"?"♡　":key==="counterpart"?"♡　":"✎　")+LABELS[key];const reel=document.createElement("div");reel.className="pill-reel";reel.id="reel-"+key;reel.textContent=pick(topics[key]);row.append(label,reel);settings.append(row)});fillEditCategory();renderList()}
+function fillEditCategory(){const el=document.getElementById("editCategory");const old=el.value;el.innerHTML="";SLOT_KEYS.forEach(k=>{const o=document.createElement("option");o.value=k;o.textContent=LABELS[k];el.append(o)});el.value=SLOT_KEYS.includes(old)?old:"word1";document.getElementById("editItems").value=topics[el.value].join("\n")}
+function result(){return `単語：${["word1","word2","word3"].map(k=>document.getElementById("reel-"+k).textContent).join("・")}\n関係性：${document.getElementById("reel-relationships").textContent}\n相手：${document.getElementById("reel-counterpart").textContent}\n文字数：${document.getElementById("reel-counts").textContent}`}
+function showResult(){document.getElementById("resultText").textContent=result().replace("単語：","").replace("\n関係性：","　×　").replace("\n相手：","　｜　相手：").replace("\n文字数：","　｜　文字数：")}
+function spin(){if(busy)return;busy=true;const btn=document.getElementById("spinBtn");btn.disabled=true;const els=SLOT_KEYS.map(k=>document.getElementById("reel-"+k));els.forEach(e=>e.classList.add("spinning"));const started=Date.now(),durations=[900,1050,1200,1350,1500,1650];els.forEach((el,i)=>{function tick(){if(Date.now()-started<durations[i]){el.textContent=pick(topics[SLOT_KEYS[i]]);setTimeout(tick,65+i*12)}else{el.textContent=pick(topics[SLOT_KEYS[i]]);el.classList.remove("spinning");if(els.every(e=>!e.classList.contains("spinning"))){busy=false;btn.disabled=false;showResult()}}}tick()})}
+function renderList(){const root=document.getElementById("categoryList");root.innerHTML="";SLOT_KEYS.forEach(k=>{const card=document.createElement("div");card.className="cat-card";const head=document.createElement("div");head.className="cat-head";const title=document.createElement("strong");title.textContent=LABELS[k]+"（"+topics[k].length+"件）";head.append(title);const items=document.createElement("div");items.className="cat-items";items.textContent=topics[k].join(" ・ ");card.append(head,items);root.append(card)})}
+document.getElementById("editCategory").addEventListener("change",e=>{document.getElementById("editItems").value=topics[e.target.value].join("\n")});
+document.getElementById("saveItemsBtn").addEventListener("click",()=>{
+  const k = document.getElementById("editCategory").value;
+  const items = document.getElementById("editItems").value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean);
+  if (!items.length) { alert("お題を1つ以上入力してね。"); return; }
+  const previous = topics[k];
+  topics[k] = items;
+  try {
+    save();
+  } catch (e) {
+    topics[k] = previous;
+    alert("端末に保存できませんでした。ブラウザの設定を確認してね。");
+    return;
+  }
+  render();
+  document.getElementById("editCategory").value = k;
+  document.getElementById("editItems").value = topics[k].join("\n");
+  alert("変更を端末に保存したよ！");
+});
+document.getElementById("spinBtn").addEventListener("click",spin);document.getElementById("rerollBtn").addEventListener("click",spin);
+document.getElementById("resetBtn").addEventListener("click",()=>{if(busy)return;render();document.getElementById("resultText").textContent="お題を引いて、創作のきっかけを見つけよう。"});
+document.getElementById("copyBtn").addEventListener("click",async()=>{const text=document.getElementById("resultText").textContent;try{await navigator.clipboard.writeText(text);alert("お題をコピーしました！")}catch(e){prompt("このお題をコピーしてね",text)}});
+document.getElementById("exportBtn").addEventListener("click",()=>{const blob=new Blob([JSON.stringify(topics,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="topics.json";a.click();URL.revokeObjectURL(url)});
+document.getElementById("importBtn").addEventListener("click",()=>document.getElementById("importFile").click());document.getElementById("importFile").addEventListener("change",async e=>{const file=e.target.files[0];if(!file)return;try{topics=clean(JSON.parse(await file.text()));save();render();alert("お題を読み込みました！")}catch(err){alert("JSONを読み込めませんでした。内容を確認してね。")}e.target.value=""});
+document.getElementById("restoreBtn").addEventListener("click",()=>{if(confirm("初期設定に戻しますか？ 端末内の編集内容は置き換わります。")){topics=clone(DEFAULT_TOPICS);save();render()}});
+load().then(render);
+</script></body></html>
